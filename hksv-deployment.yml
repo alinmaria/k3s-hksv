@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hksv-deployment
+  namespace: hksv-scrypted
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hksv
+  template:
+    metadata:
+      labels:
+        app: hksv
+    spec:
+      containers:
+      - name: hksv-scrypted
+        image: koush/scrypted
+        env:
+        - name: SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION
+          value: "Bearer atORNIATERbormYoPESTalIel"
+        - name: SCRYPTED_WEBHOOK_UPDATE
+          value: "http://localhost:10444/v1/update"
+        ports:
+        - containerPort: 10443
+          protocol: TCP
+          name: tcp10443
+        volumeMounts:
+          - name: hksv-config
+            mountPath: /server/volume
+      volumes:
+      - name: hksv-config
+        hostPath:
+          path: /data/hksv-scrypted
+          type: DirectoryOrCreate

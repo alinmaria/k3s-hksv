@@ -11,5 +11,9 @@ spec:
     port: 443
     targetPort: 10443
     name: tcp10443
+  - protocol: TCP
+    port: 4578
+    targetPort: 4578
+    name: tcp-hksv
   type: LoadBalancer
   loadBalancerIP: 10.100.99.135

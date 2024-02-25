@@ -8,3 +8,8 @@ spec:
     app: hksv
   type: LoadBalancer
   loadBalancerIP: 10.100.99.135
+  ports:
+  - protocol: TCP
+    port: 443
+    targetPort: 10443
+    name: tcp10443

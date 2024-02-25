@@ -21,13 +21,6 @@ spec:
           value: "Bearer atORNIATERbormYoPESTalIel"
         - name: SCRYPTED_WEBHOOK_UPDATE
           value: "http://localhost:10444/v1/update"
-        ports:
-        - containerPort: 10443
-          protocol: TCP
-          name: tcp10443
-        - containerPort: 4578
-          protocol: TCP
-          name: tcp-hksv
         volumeMounts:
           - name: hksv-config
             mountPath: /server/volume

@@ -32,4 +32,4 @@ spec:
       volumes:
       - name: hksv-config
         persistentVolumeClaim:
-          claimName: hcsv-config-pvc
+          claimName: hksv-config-pvc

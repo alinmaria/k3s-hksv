@@ -32,5 +32,5 @@ spec:
       volumes:
       - name: hksv-config
         hostPath:
-          path: /data/hksv-scrypted
+          path: /nfs-ssd/hksv-scrypted
           type: DirectoryOrCreate

@@ -7,7 +7,7 @@ spec:
   selector:
     app: hksv
   type: LoadBalancer
-  loadBalancerIP: 10.100.99.135
+  loadBalancerIP: 10.100.99.70
   ports:
   - protocol: TCP
     port: 443
